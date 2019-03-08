@@ -1,7 +1,7 @@
 Configuration Diskinitialization
 {
 
-    Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
 
 Script Initialize_Disk
@@ -18,7 +18,7 @@ Script Initialize_Disk
             $disks = Get-Disk | Where-Object partitionstyle -eq 'raw' | Sort-Object number
             $letters = 69..89 | ForEach-Object { [char]$_ }
             $count = 0
-            $label = "datadisk"
+            $label = "Data"
  
             "Formatting disks.."
             foreach ($disk in $disks) {
