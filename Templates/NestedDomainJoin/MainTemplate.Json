@@ -1,0 +1,121 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachineName": {
+            "maxLength": 15,
+            "type": "String",
+            "metadata": {
+                "description": "Enter VM name"
+            }
+        },
+        "diskStorageType": {
+            "defaultValue": "Standard_LRS",
+            "allowedValues": [
+                "Standard_LRS",
+                "Premium_LRS"
+            ],
+            "type": "String"
+        },
+        "numDataDisks": {
+            "defaultValue": 1,
+            "minValue": 1,
+            "maxValue": 2,
+            "type": "Int",
+            "metadata": {
+                "description": "Choose 1 or 2 additional data disks, default value is 1"
+            }
+        },
+        "windowsOSVersion": {
+            "defaultValue": "2019-Datacenter",
+            "allowedValues": [
+                "2019-Datacenter",
+                "2019-Datacenter-Core",
+                "2019-Datacenter-Core-smalldisk"
+            ],
+            "type": "String",
+            "metadata": {
+                "description": "The Windows version for the VM. This will pick a fully patched image of this given Windows version."
+            }
+        },
+        "virtualMachineSize": {
+            "defaultValue": "Standard_B2s",
+            "allowedValues": [
+                "Standard_B2s"
+            ],
+            "type": "String",
+            "metadata": {
+                "description": "size of VM "
+            }
+        },
+        "subnetName": {
+            "defaultValue": "adSubnet",
+            "allowedValues": [
+                "adSubnet"
+                
+            ],
+            "type": "String",
+            "metadata": {
+                "description": "Select desired Subnet"
+            }
+        }
+    },
+    "variables": {
+        "templatelink": "enter the template url to the blob storage",
+        "keyVaultRef": "enter the key vault resource id",
+        "domainPassword": "key vault reference for the domain password",
+        "domainUsername": "key vault reference for the domain account name",
+        "artifactsLocationSasToken": "SaS token for the blobl storage"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[parameters('virtualMachineName')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('templatelink'), variables('artifactsLocationSasToken'))]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "virtualMachineName": {
+                        "value": "[parameters('virtualMachineName')]"
+                    },
+                    "diskStorageType": {
+                        "value": "[parameters('diskStorageType')]"
+                    },
+                    "numDataDisks": {
+                        "value": "[parameters('numDataDisks')]"
+                    },
+                    "windowsOSVersion": {
+                        "value": "[parameters('windowsOSVersion')]"
+                    },
+                    "virtualMachineSize": {
+                        "value": "[parameters('virtualMachineSize')]"
+                    },
+                    "subnetName": {
+                        "value": "[parameters('subnetName')]"
+                    },
+                    "domainUsername": {
+                        "reference": {
+                            "keyVault": {
+                                "id": "[variables('keyVaultRef')]"
+                            },
+                            "secretName": "[variables('domainUsername')]"
+                        }
+                    },
+                    "domainPassword": {
+                        "reference": {
+                            "keyVault": {
+                                "id": "[variables('keyVaultRef')]"
+                            },
+                            "secretName": "[variables('domainPassword')]"
+                        }
+                    }
+                
+                }
+            }
+        }
+    ]
+}
