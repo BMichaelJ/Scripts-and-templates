@@ -15,5 +15,5 @@ http://azurefabric.com/domain-join-azure-vms-from-arm-template-with-key-vault-se
 - 3: Create and account with least Domain join delegate access.
 - 4: Add this accountname and password to Key Vault as secrets
 - 5: Fill in the variables in the MainTemplate an LinkedTemplate
-- 6: Upload LinkedTemplate.json to a storage blob and retreive the SaS token string
+- 6: Upload LinkedTemplate.json to a storage blob 
 - 7: Run the MainTemplate
