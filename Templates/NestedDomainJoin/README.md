@@ -10,7 +10,7 @@ http://azurefabric.com/domain-join-azure-vms-from-arm-template-with-key-vault-se
 - Storage Blob
 
 # Steps
-- 1: Run the template, klick on Deploy to Azure - https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain/
+- 1: Run the template, klick on Deploy to Azure, name the Resource Group to "ADTest" - https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain/
 - 2: Configure the AD domain with a OU (Cannot be default computers)
 - 3: Create and account with least Domain join delegate access.
 - 4: Add this accountname and password to Key Vault as secrets

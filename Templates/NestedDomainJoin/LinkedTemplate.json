@@ -68,7 +68,7 @@
     "variables": {
         "location": "westeurope",
         "virtualNetworkName": "adVNET",
-        "vnetId": "[resourceId('ADTestForrest','Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
+        "vnetId": "[resourceId('ADTest','Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('subnetName'))]",
         "adminUsername": "Insert desired local admin",
         "adminPassword": "Chose a password",
