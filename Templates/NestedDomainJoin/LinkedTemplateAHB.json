@@ -90,8 +90,8 @@
                 "[concat('Microsoft.Network/networkInterfaces/', variables('networkInterfaceName'))]"
             ],
             "properties": {
+                "licenseType": "Windows_Server",
                 "osProfile": {
-                    "licenseType": "Windows_Server",
                     "computerName": "[parameters('virtualMachineName')]",
                     "adminUsername": "[variables('adminUsername')]",
                     "adminPassword": "[variables('adminPassword')]",
