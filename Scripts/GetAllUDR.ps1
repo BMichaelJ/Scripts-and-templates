@@ -1,0 +1,1 @@
+Get-AzRouteTable  | ForEach { $RouteName = $_.Name; Write-Host $RouteName -ForegroundColor DarkGreen; $Routes = $_.Routes | ForEach { Write-Host $_.Name , $_.AddressPrefix, $_.NextHopType , $_.NextHopIpAddress -Separator "  |  " -ForegroundColor Yellow}}

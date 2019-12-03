@@ -1,0 +1,1 @@
+(Get-AzNetworkInterface ).IpConfigurations.PublicIpAddress.Id | Foreach-Object -Process {$_.Split('/')| select -Last 1} | Foreach-Object -Process {Get-AzPublicIpAddress -Name $_} | Format-List Name, PublicIpAllocationMethod,IpAddress
