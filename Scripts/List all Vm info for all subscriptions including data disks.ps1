@@ -1,10 +1,10 @@
 #List all Vm info for all subscriptions including data disks (Thanks to @MinhPhung for input on looping throught each subscription)
 $vmOutput = @()
-$Subs = Get-AzureRmSubscription
+$Subs = Get-AzSubscription
 Foreach ($Sub in $Subs)
 {
-Select-AzureRMSubscription $sub | Out-Null
-$VMs = Get-AzureRmVM
+Select-AzSubscription $sub | Out-Null
+$VMs = Get-AzVM
 Foreach ($VM in $VMs)
 {
 $VMInfo = [PSCustomObject]@{

@@ -1,0 +1,1 @@
+Get-azVM | ForEach-Object $_ {get-azvm -ResourceGroupName -Name $_.Name -Status} | where {$_Statuses[1].Dispalystatus -eq "VM running"}
