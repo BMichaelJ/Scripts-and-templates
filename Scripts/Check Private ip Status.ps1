@@ -1,5 +1,7 @@
-$vms = get-azurermvm
-$nics = get-azurermnetworkinterface | where VirtualMachine -NE $null #skip Nics with no VM
+#List all vms and the ipadresses with status on Static and Dynamic
+
+$vms = get-azvm
+$nics = get-aznetworkinterface | where VirtualMachine -NE $null #skip Nics with no VM
 
 foreach($nic in $nics)
 {
