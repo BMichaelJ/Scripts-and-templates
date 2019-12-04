@@ -1,0 +1,2 @@
+where type == "microsoft.network/networkinterfaces"
+ | where properties.ipConfigurations[0].properties.privateIPAllocationMethod == "Dynamic"
