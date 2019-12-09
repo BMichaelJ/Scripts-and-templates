@@ -1,0 +1,1 @@
+search-azgraph -Query "where type =~ 'Microsoft.Compute/virtualMachines' | summarize count() by tostring(properties.storageProfile.osDisk.osType) | project OS=properties_storageProfile_osDisk_osType, Total=count_"

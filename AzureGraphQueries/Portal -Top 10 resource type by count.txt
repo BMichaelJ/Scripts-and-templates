@@ -1,0 +1,5 @@
+summarize ResourceCount=count() by type
+| order by ResourceCount
+| extend ['Resource count']=ResourceCount, ['Resource type']=type
+| project ['Resource type'], ['Resource count']
+| take 10

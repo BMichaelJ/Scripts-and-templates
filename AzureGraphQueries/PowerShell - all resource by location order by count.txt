@@ -1,0 +1,1 @@
+search-azgraph -Query "summarize count() by location | project total=count_, location | order by total desc"
