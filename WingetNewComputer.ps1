@@ -13,7 +13,8 @@ $apps = @(
     @{name = "Discord.Discord" },
     @{name = "GitHub.cli" },
     @{name = "Spotify.Spotify" },
-    @{name = "SlackTechnologies.Slack" }
+    @{name = "SlackTechnologies.Slack" },
+    @{name = "Microsoft.PowerBI" }
 );
 Foreach ($app in $apps) {
     #check if the app is already installed
