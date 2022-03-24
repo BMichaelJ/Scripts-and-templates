@@ -1,3 +1,5 @@
+# If first run, then msstore needs eula accepeted and done by adding --accept-source-agreements as argument
+
 
 #Install New apps
 $apps = @(
@@ -23,10 +25,10 @@ Foreach ($app in $apps) {
     if (![String]::Join("", $listApp).Contains($app.name)) {
         Write-host "Installing:" $app.name
         if ($app.source -ne $null) {
-            winget install --exact --silent $app.name --source $app.source
+            winget install --exact --silent $app.name --source $app.source --accept-source-agreements
         }
         else {
-            winget install --exact --silent $app.name 
+            winget install --exact --silent $app.name --accept-source-agreements
         }
     }
     else {
