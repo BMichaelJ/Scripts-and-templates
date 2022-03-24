@@ -18,6 +18,7 @@ $apps = @(
     @{name = "Microsoft.PowerToys" }, 
     @{name = "Git.Git" }, 
     @{name = "WhatsApp.WhatsApp" },
+    @{name = "OpenWhisperSystems.Signal" },
     @{name = "Microsoft.VisualStudioCode.Insiders" },
     @{name = "Discord.Discord" },
     @{name = "GitHub.cli" },
