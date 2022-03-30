@@ -23,6 +23,7 @@ $apps = @(
     @{name = "Discord.Discord" },
     @{name = "GitHub.cli" },
     @{name = "Spotify.Spotify" },
+    @{name = "JGraph.Draw" },
     @{name = "SlackTechnologies.Slack" },
     @{name = "Microsoft.PowerBI" }
 );
