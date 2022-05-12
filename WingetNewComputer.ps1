@@ -22,10 +22,11 @@ $apps = @(
     @{name = "Microsoft.VisualStudioCode.Insiders" },
     @{name = "Discord.Discord" },
     @{name = "GitHub.cli" },
-    @{name = "Spotify.Spotify" },
+    @{name = "Microsoft.VisioViewer" },
     @{name = "JGraph.Draw" },
     @{name = "SlackTechnologies.Slack" },
-    @{name = "Microsoft.PowerBI" }
+    @{name = "Microsoft.PowerBI"},
+    @{name = "Spotify.Spotify"}
 );
 Foreach ($app in $apps) {
     #check if the app is already installed
