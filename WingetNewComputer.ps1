@@ -7,6 +7,7 @@ $apps = @(
     @{name = "Microsoft.PowerShell" }, 
     @{name = "Microsoft.VisualStudioCode" }, 
     @{name = "Microsoft.WindowsTerminal" },
+    @{name = "JanDeDobbeleer.OhMyPosh" },
     @{name = "Docker.DockerDesktop" },
     @{name = "Microsoft.AzureStorageExplorer" },
     @{name = "Microsoft.AzureStorageEmulator" },
