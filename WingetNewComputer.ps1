@@ -27,7 +27,9 @@ $apps = @(
     @{name = "JGraph.Draw" },
     @{name = "SlackTechnologies.Slack" },
     @{name = "Microsoft.PowerBI"},
-    @{name = "Spotify.Spotify"}
+    @{name = "Spotify.Spotify"},
+    @{name = "Anaconda.Anaconda3"},
+    @{name = "Microsoft.Teams"}
 );
 Foreach ($app in $apps) {
     #check if the app is already installed
