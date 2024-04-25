@@ -1,0 +1,4 @@
+resources
+| where type == "microsoft.compute/disks"
+| where properties.diskState == "Unattached" and todatetime(properties.LastOwnershipUpdateTime) < ago(60d)
+| project name, id, diskState = properties.diskState, LastUpdateTime = format_datetime(todatetime(properties.LastOwnershipUpdateTime), "dd-MM.yyy")
